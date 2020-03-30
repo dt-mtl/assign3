@@ -1,20 +1,28 @@
 import java.util.ArrayList;
-import java.util.
+import java.util.Arrays;
 
 public class Biblio {
     //attributes
-    protected int numArticles;
-    protected Article[] articles=new Article[numArticles];
+    private int bibNumber;
+    private ArrayList<Article> articles;
+
 
     //Constructor
-    public Biblio(){
-
+    //parameterised
+    public Biblio(int a){
+        bibNumber=a;
+        this.articles=new ArrayList<Article>();
     }
-
-
     //mutator
 
-    public void setAmount(int amount) {
-        numArticles = amount;
+
+    public void addArticles(Article a) {
+        articles.add(a);
+    }
+
+    @Override
+    public String toString() {
+        return "Biblio ["+ bibNumber +"] articles=" + articles +
+                '}';
     }
 }
